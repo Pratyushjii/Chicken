@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lists and Table</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            background: linear-gradient(135deg, #f7b42c, #fc575e);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: backgroundFade 10s infinite alternate;
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                background: linear-gradient(135deg, #f7b42c, #fc575e);
+            }
+            100% {
+                background: linear-gradient(135deg, #fc575e, #f7b42c);
+            }
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: #fff;
+            margin: 20px 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            position: relative;
+        }
+
+        .content h2 {
+            color: #fc575e;
+        }
+
+        ul, ol, dl {
+            padding: 0 20px;
+        }
+
+        ul li, ol li {
+            margin: 5px 0;
+            transition: transform 0.2s;
+        }
+
+        ul li:hover, ol li:hover {
+            transform: scale(1.1);
+        }
+
+        dl dt {
+            font-weight: bold;
+            color: #f7b42c;
+        }
+
+        dl dd {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background: #fc575e;
+            color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .introduction {
+            font-style: italic;
+            background: #333;  /* Darker background */
+            color: #f7b42c;  /* Lighter text color */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #fc575e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button-container button:hover {
+            background: #f7b42c;
+        }
+
+        #dynamic-list {
+            margin-top: 20px;
+        }
+
+        #dynamic-list ul {
+            list-style-type: square;
+        }
+
+        #dynamic-list li {
+            margin: 5px 0;
+            color: #333;
+        }
+    </style>
+    <script>
+        function addItem() {
+            const list = document.querySelector('#dynamic-list ul');
+            const newItem = document.createElement('li');
+            newItem.textContent = 'I Love Chicken';  // Changed from 'New Dynamic Item' to 'I Love Chicken'
+            list.appendChild(newItem);
+        }
+
+        function showAlert() {
+            alert('Hello! Thank you for exploring my page!');
+        }
+    </script>
+</head>
+<body>
+    <h1>Beautiful Lists and Table</h1>
+    <div class="content">
+        <h2>Ordered List</h2>
+        <ol>
+            <li>Chicken</li>
+            <li>Meat</li>
+            <li>Fish</li>
+        </ol>
+
+        <hr>
+
+        <h2>Unordered List</h2>
+        <ul>
+            <li>Kunal</li>
+            <li>Neha</li>
+            <li>Sambhav</li>
+            <li>Pratyush</li>
+        </ul>
+
+        <hr>
+
+        <h2>Description List</h2>
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+            <dt>JavaScript</dt>
+            <dd>Programming language for the web</dd>
+        </dl>
+
+        <hr>
+
+        <h2>Table Example</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>25</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>30</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                    <td>35</td>
+                    <td>Canada</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <p class="introduction">Hi, I am Pratyush Gupta, a 12-year-old student currently in Class 7. I enjoy learning and creating interactive web pages like this one. Feel free to explore and let me know your thoughts!</p>
+
+        <div class="button-container">
+            <button onclick="addItem()">Add Item to Dynamic List</button>
+            <button onclick="showAlert()">Click Me!</button>
+            <a href="https://www.chess.com" target="_blank">Go to Chess.com</a>
+        </div>
+
+        <div id="dynamic-list">
+            <h2>Dynamic List</h2>
+            <ul></ul>
+        </div>
+
+        <p>Thank you for visiting!</p>
+    </div>
+    <div class="footer">
+        &copy; 2024 Your Interactive Page - By Pratyush Gupta
+    </div>
+</body>
+</html>
